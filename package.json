@@ -2,13 +2,17 @@
   "scripts": {
     "dev": "solid-start dev",
     "build": "solid-start build",
-    "start": "solid-start start"
+    "start": "solid-start start",
+    "push": "prisma db push",
+    "postinstall": "prisma generate",
+    "postbuild": "cp node_modules/@prisma/engines/*query* .vercel/output/functions/render.func/ && cp prisma/schema.prisma .vercel/output/functions/render.func/"
   },
   "type": "module",
   "private": true,
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",
+    "prisma": "^4.8.0",
     "solid-start-trpc": "^0.0.16",
     "solid-start-vercel": "^0.2.0",
     "tailwindcss": "^3.2.4",
@@ -16,6 +20,7 @@
     "vite": "^3.1.0"
   },
   "dependencies": {
+    "@prisma/client": "^4.8.0",
     "@solidjs/meta": "^0.28.2",
     "@solidjs/router": "^0.5.0",
     "@tanstack/solid-query": "^4.20.4",

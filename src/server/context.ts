@@ -1,11 +1,14 @@
 import type { inferAsyncReturnType } from '@trpc/server'
 import type { createSolidAPIHandlerContext } from 'solid-start-trpc'
 
+import { prisma } from '~/lib/prisma-client'
+
 export const createContextInner = async (
   opts: createSolidAPIHandlerContext
 ) => {
   return {
     ...opts,
+    prisma,
   }
 }
 
