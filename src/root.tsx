@@ -8,10 +8,12 @@ import {
   FileRoutes,
   Scripts,
   ErrorBoundary,
-} from 'solid-start';
-import { Suspense } from 'solid-js';
+} from 'solid-start'
+import { Suspense } from 'solid-js'
 
-export default function Root() {
+import './root.css'
+
+const Root = () => {
   return (
     <Html lang="en">
       <Head>
@@ -29,5 +31,7 @@ export default function Root() {
         <Scripts />
       </Body>
     </Html>
-  );
+  )
 }
+
+export default Root

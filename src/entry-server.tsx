@@ -2,8 +2,10 @@ import {
   StartServer,
   createHandler,
   renderAsync,
-} from 'solid-start/entry-server';
+} from 'solid-start/entry-server'
 
-export default createHandler(
+const handler = createHandler(
   renderAsync(event => <StartServer event={event} />)
-);
+)
+
+export default handler

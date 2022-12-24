@@ -1,18 +1,9 @@
-import Counter from "~/components/Counter";
-import "./index.css";
+import { trpc } from '~/lib/trpc-client'
 
-export default function Home() {
-  return (
-    <main>
-      <h1>Hello world!</h1>
-      <Counter />
-      <p>
-        Visit{" "}
-        <a href="https://start.solidjs.com" target="_blank">
-          start.solidjs.com
-        </a>{" "}
-        to learn how to build Solid apps.
-      </p>
-    </main>
-  );
+const Home = () => {
+  const res = trpc.hello.useQuery(() => ({ name: 'Rushi' }))
+  console.log({ res })
+  return <div class="font-bold underline">{res?.data || ''}</div>
 }
+
+export default Home
