@@ -2,6 +2,7 @@ import type { inferAsyncReturnType } from '@trpc/server'
 import type { createSolidAPIHandlerContext } from 'solid-start-trpc'
 
 import { prisma } from '~/lib/prisma-client'
+import { redisClient as redis } from '~/lib/redis-client'
 
 export const createContextInner = async (
   opts: createSolidAPIHandlerContext
@@ -9,6 +10,7 @@ export const createContextInner = async (
   return {
     ...opts,
     prisma,
+    redis,
   }
 }
 

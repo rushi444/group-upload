@@ -11,6 +11,7 @@
   "private": true,
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "daisyui": "^2.46.0",
     "postcss": "^8.4.20",
     "prisma": "^4.8.0",
     "solid-start-trpc": "^0.0.16",
@@ -26,6 +27,8 @@
     "@tanstack/solid-query": "^4.20.4",
     "@trpc/client": "^10.7.0",
     "@trpc/server": "^10.7.0",
+    "cuid": "^2.1.8",
+    "ioredis": "^5.2.4",
     "solid-js": "^1.6.0",
     "solid-start": "^0.2.0",
     "solid-trpc": "^0.0.11-rc.2",
